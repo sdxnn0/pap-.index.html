@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ánimo Pelado</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 22px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.message {
+    margin-top: 20px;
+    background: #fff3cd;
+    padding: 15px 20px;
+    border-radius: 14px;
+    font-weight: 600;
+    color: #856404;
+    box-shadow: inset 0 0 0 2px #ffeeba;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <canvas id="dibujo" width="400" height="300"></canvas>
+
+    <div class="message">
+        Ánimo pelado 💛<br>
+        te quiero,<br>
+        ¡tú puedes!
+    </div>
+</div>
+
+<script>
+const c = document.getElementById("dibujo");
+const ctx = c.getContext("2d");
+
+// ====================
+// MARTILLO
+// ====================
+
+// Mango
+ctx.fillStyle = "#8b5a2b";
+ctx.beginPath();
+ctx.roundRect(90, 130, 25, 120, 10);
+ctx.fill();
+
+// Detalle mango
+ctx.fillStyle = "#6d4422";
+ctx.beginPath();
+ctx.roundRect(95, 145, 15, 90, 8);
+ctx.fill();
+
+// Cabeza martillo
+ctx.fillStyle = "#555";
+ctx.beginPath();
+ctx.roundRect(60, 110, 90, 25, 8);
+ctx.fill();
+
+// Brillo cabeza
+ctx.fillStyle = "#777";
+ctx.beginPath();
+ctx.roundRect(65, 113, 70, 8, 6);
+ctx.fill();
+
+// ====================
+// CASCO DE CONSTRUCCIÓN
+// ====================
+
+// Casco base
+ctx.fillStyle = "#f1c40f";
+ctx.beginPath();
+ctx.ellipse(270, 150, 70, 55, 0, Math.PI, 0, true);
+ctx.fill();
+
+// Parte inferior casco
+ctx.fillStyle = "#e0b20e";
+ctx.beginPath();
+ctx.roundRect(200, 150, 140, 25, 12);
+ctx.fill();
+
+// Nervaduras del casco
+ctx.strokeStyle = "#d4ac0d";
+ctx.lineWidth = 3;
+
+ctx.beginPath();
+ctx.moveTo(270, 95);
+ctx.lineTo(270, 150);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(245, 100);
+ctx.lineTo(260, 150);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(295, 100);
+ctx.lineTo(280, 150);
+ctx.stroke();
+
+// Brillo casco
+ctx.fillStyle = "rgba(255,255,255,0.3)";
+ctx.beginPath();
+ctx.ellipse(245, 120, 20, 30, -0.5, 0, Math.PI * 2);
+ctx.fill();
+</script>
+
+</body>
+</html>
